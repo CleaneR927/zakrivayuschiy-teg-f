@@ -7,7 +7,7 @@
   --svg-base-cl: #000;
   --svg-acc-cl: #f00;
   --base-font: 'Inter-Variable', sans-serif;
-  --accent-font: 'PressStart2P', sans-serif;
+  --accent-font: 'PressStart2P', fantasy;
   --text-fw: 400;
   --title-fw: 700;
   --bc-page: repeating-linear-gradient(

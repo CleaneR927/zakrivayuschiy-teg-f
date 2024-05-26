@@ -42,17 +42,21 @@
   margin-block-start: clamp(120px, 7.1479rem + 1.5023vw, 136px);
   color: var(--accent-cl, #000);
   text-transform: uppercase;
-  font-family: var(--accent-font, 'PressStart2P', sans-serif);
+  font-family: var(--accent-font, 'PressStart2P', fantasy);
   font-style: normal;
   font-weight: normal;
   font-size: clamp(49px, 2.7104rem + 1.5023vw, 65px);
   line-height: clamp(49px, 2.7104rem + 1.5023vw, 65px);
 }
 
+.header-title a {
+  outline: none;
+}
+
 .header-text {
   margin-block-start: 20px;
   color: var(--accent-cl, #000);
-  font-family: var(--accent-font, 'PressStart2P', sans-serif);
+  font-family: var(--accent-font, 'PressStart2P', fantasy);
   text-transform: uppercase;
   font-style: normal;
   font-weight: normal;
@@ -113,16 +117,15 @@
   position: absolute;
   inset-inline-start: 0;
   inset-block-end: -3px;
-  inline-size: 100%;
+  inline-size: 0;
   block-size: 3px;
   background-color: var(--accent-cl, #000);
   opacity: 0.6;
-  scale: 0 1;
   transition: 0.3s ease;
 }
 
 .theme-menu__button:focus-visible::after {
-  scale: 1 1;
+  inline-size: 100%;
 }
 
 .content-card {
@@ -156,13 +159,14 @@
 .card-image {
   object-fit: cover;
   object-position: center;
-  inline-size: clamp(375px, 16.2852rem + 30.5164vw, 700px);
-  block-size: clamp(375px, 16.2852rem + 30.5164vw, 700px);
-  border: 2px solid var(--accent-cl, #000);
+  inline-size: clamp(371px, 16.0352rem + 30.5164vw, 696px);
+  block-size: 100%
 }
 
 .container__card-image {
   position: relative;
+  block-size: clamp(375px, 16.3732rem + 30.1408vw, 696px);
+  border: 2px solid var(--accent-cl, #000);
 }
 
 .card__label {
@@ -170,7 +174,7 @@
   inset-inline-end: clamp(13px, 0.5044rem + 1.3146vw, 27px);
   inset-block-start: clamp(24px, 1.434rem + 0.2817vw, 27px);
   z-index: 1;
-  font-family: var(--accent-font, 'PressStart2P', sans-serif);
+  font-family: var(--accent-font, 'PressStart2P', fantasy);
   font-size: 14px;
   color: var(--accent-cl, #000);
   opacity: 0.5;
@@ -244,75 +248,13 @@
   padding-block-start: 12px;
   padding-block-end: 10px;
   color: var(--accent-cl, #000);
-  font-family: var(--accent-font, 'PressStart2P', sans-serif);
+  font-family: var(--accent-font, 'PressStart2P', fantasy);
   font-style: normal;
   font-weight: normal;
   font-size: 14px;
   line-height: 90%;
   background-color: transparent;
   border: 2px solid var(--accent-cl, #000);
-}
-
-.sparks {
-  opacity: 0;
-}
-
-.core {
-  opacity: 0;
-  transition:
-    opacity 0.3s 0.03s linear,
-    fill 0.3s 0.03s linear;
-}
-
-.heart:hover .core {
-  opacity: 1;
-}
-
-.heart:active .core {
-  fill: var(--svg-acc-cl, #f00);
-}
-
-.main-body {
-  opacity: 0;
-  transition:
-    opacity 0.3s 0.05s linear,
-    fill 0.3s 0.05s linear;
-}
-
-.heart:hover .main-body {
-  opacity: 1;
-}
-
-.heart:active .main-body {
-  fill: var(--svg-acc-cl, #f00);
-}
-
-/* Анимации сердца */
-
-.like-icon.is-liked .core {
-  opacity: 1;
-  fill: var(--svg-acc-cl, #f00);
-  transition:
-    opacity 0.3s 0.03s linear,
-    fill 0.3s 0.03s linear;
-}
-
-.like-icon.is-liked .main-body {
-  opacity: 1;
-  fill: var(--svg-acc-cl, #f00);
-  transition:
-    opacity 0.3s 0.05s linear,
-    fill 0.3s 0.05s linear;
-}
-
-.like-icon .contour {
-  fill: var(--accent-cl, #000);
-  transition: fill 0.1s linear;
-}
-
-.like-icon.is-liked .contour {
-  fill: var(--svg-acc-cl, #f00);
-  transition: fill 0.3s 0.06s linear;
 }
 
 .save-button {
@@ -327,7 +269,7 @@
   padding-inline: 20px;
   padding-block-end: 15px;
   color: var(--accent-cl, #000);
-  font-family: var(--accent-font, 'PressStart2P', sans-serif);
+  font-family: var(--accent-font, 'PressStart2P', fantasy);
   font-style: normal;
   font-weight: normal;
   font-size: 14px;
@@ -411,7 +353,7 @@
   gap: 30px;
   padding: 0;
   inline-size: clamp(341px, 20.9604rem + 1.5023vw, 357px);
-  font-family: var(--accent-font, 'PressStart2P', sans-serif);
+  font-family: var(--accent-font, 'PressStart2P', fantasy);
   color: var(--accent-cl, #000);
   border: 2px solid var(--accent-cl, #000);
   background-color: var(--add-cl, #FFF);
@@ -477,34 +419,34 @@
   inline-size: 100%;
 }
 
-.filter-1 {
+.filter-brightness {
   filter: brightness(80%);
 }
 
-.filter-2 {
+.filter-contrast-brightness {
   filter: contrast(50%) brightness(80%);
 }
 
-.filter-3 {
+.filter-grayscale {
   filter: grayscale(1);
 }
 
-.filter-4 {
+.filter-saturate {
   filter: saturate(200%);
 }
 
-.filter-5 {
+.filter-sepia-contrast-brightness {
   filter: sepia(60%) contrast(140%) brightness(80%);
 }
 
-.filter-6 {
+.filter-hue-rotate {
   filter: hue-rotate(-90deg);
 }
 
-.filter-7 {
+.filter-grayscale-saturate {
   filter: grayscale(0.8) saturate(260%);
 }
 
-.filter-8 {
+.filter-blur {
   filter: blur(35px);
 }

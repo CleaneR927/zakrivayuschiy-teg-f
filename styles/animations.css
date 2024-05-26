@@ -64,7 +64,67 @@
     animation: scaling-svg 0.3s ease-in alternate 0.1s;
   }
 
+  .sparks {
+    opacity: 0;
+  }
+
   .is-liked .sparks {
     animation: sparks-svg 0.3s ease-in alternate 0.3s;
+  }
+  
+  .core {
+    opacity: 0;
+    transition:
+      opacity 0.3s 0.03s linear,
+      fill 0.3s 0.03s linear;
+  }
+  
+  .heart:hover .core {
+    opacity: 1;
+  }
+  
+  .heart:active .core {
+    fill: var(--svg-acc-cl, #f00);
+  }
+  
+  .main-body {
+    opacity: 0;
+    transition:
+      opacity 0.3s 0.05s linear,
+      fill 0.3s 0.05s linear;
+  }
+  
+  .heart:hover .main-body {
+    opacity: 1;
+  }
+  
+  .heart:active .main-body {
+    fill: var(--svg-acc-cl, #f00);
+  }
+  
+  .like-icon.is-liked .core {
+    opacity: 1;
+    fill: var(--svg-acc-cl, #f00);
+    transition:
+      opacity 0.3s 0.03s linear,
+      fill 0.3s 0.03s linear;
+  }
+  
+  .like-icon.is-liked .main-body {
+    opacity: 1;
+    fill: var(--svg-acc-cl, #f00);
+    transition:
+      opacity 0.3s 0.05s linear,
+      fill 0.3s 0.05s linear;
+  }
+  
+  .like-icon .contour {
+    fill: var(--accent-cl, #000);
+    transition: fill 0.1s linear;
+  }
+  
+  .like-icon.is-liked .contour {
+    fill: var(--svg-acc-cl, #f00);
+    transition: fill 0.3s 0.06s linear;
   }
 }
